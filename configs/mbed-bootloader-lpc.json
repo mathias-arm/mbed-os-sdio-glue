@@ -126,18 +126,6 @@
                                                               "ANALOGOUT",
                                                               "I2C"
                                                              ]
-        },
-        "DISCO_F469NI": {
-            "target.components_add"                    : ["SDIO"],
-            "target.components_remove"                 : ["QSPIF"],
-            "target.device_has_add"                    : ["SDIO", "SDIO_ASYNC"],
-            "storage_filesystem.rbp_internal_size"     : "(2*16*1024)"
-        },
-        "DISCO_F746NG": {
-            "target.components_add"                    : ["SDIO"],
-            "target.components_remove"                 : ["QSPIF"],
-            "target.device_has_add"                    : ["SDIO", "SDIO_ASYNC"],
-            "storage_filesystem.rbp_internal_size"     : "(2*16*1024)"
         }
     }
 }
