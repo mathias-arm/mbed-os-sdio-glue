@@ -7,4 +7,8 @@ BlockDevice *BlockDevice::get_default_instance()
     return &bd;
 }
 
+BlockDevice *get_other_blockdevice()
+{
+    return &bd;
+}
 #endif
