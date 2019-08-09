@@ -1,6 +1,7 @@
 {
     "macros": [
         "ARM_UC_USE_PAL_BLOCKDEVICE=1",
+        "ARM_UC_FEATURE_DELTA_PAAL=0",
         "MBEDTLS_USE_PSA_CRYPTO"
     ],
     "target_overrides": {
@@ -25,7 +26,7 @@
         },
         "LPC55S69_NS": {
             "mbed-cloud-client.update-storage"           : "ARM_UCP_FLASHIAP_BLOCKDEVICE", 
-            "target.bootloader_img"                      : "../../mbed-bootloader-lpc55s69-sdio.hex",
+            "target.bootloader_img"                      : "../bootloaders/mbed-bootloader-LPC55S69_NS-sdio.hex",
             "target.header_offset"                       : "0x8000",
             "target.app_offset"                          : "0x8400",
             "target.features_add"                        : [ "BOOTLOADER", "STORAGE" ],
