@@ -1,0 +1,85 @@
+{
+    "target_overrides": {
+        "*": {
+            "target.components_remove"                  : ["FLASHIAP"],
+            "platform.stdio-baud-rate"                  : 115200,
+            "platform.stdio-convert-newlines"           : true,
+            "mbed-trace.enable"                         : null,
+            "nsapi.default-wifi-security"               : "WPA_WPA2",
+            "nsapi.default-wifi-ssid"                   : "\"SSID\"",
+            "nsapi.default-wifi-password"               : "\"Password\""
+        },
+        "DISCO_F469NI": {
+            "target.components_add"                     : ["QSPIF"],
+            "target.components_add"                     : ["WIFI_WIZFI310"],
+            "target.network-default-interface-type"     : "WIFI",
+            "wizfi310.tx"                               : "D1",
+            "wizfi310.rx"                               : "D0",
+            "wizfi310.rts"                              : "D4",
+            "wizfi310.cts"                              : "D2",
+            "wizfi310.rx-buffer-size"                   : 512,
+            "wizfi310.stacksize"                        : 1536,
+            "wizfi310.event-queue-size"                 : 1024,
+            "wizfi310.provide-default"                  : true,
+            "device-management.flash-start-address"     : "0x08000000",
+            "device-management.flash-size"              : "(2048*1024)",
+            "device-management.sotp-section-1-address"  : "(MBED_CONF_APP_FLASH_START_ADDRESS + MBED_CONF_APP_FLASH_SIZE - 2*(128*1024))",
+            "device-management.sotp-section-1-size"     : "(128*1024)",
+            "device-management.sotp-section-2-address"  : "(MBED_CONF_APP_FLASH_START_ADDRESS + MBED_CONF_APP_FLASH_SIZE - 1*(128*1024))",
+            "device-management.sotp-section-2-size"     : "(128*1024)",
+            "update-client.application-details"         : "(MBED_CONF_APP_FLASH_START_ADDRESS + 64*1024)",
+            "update-client.storage-address"             : "(2*1024*1024)",
+            "update-client.storage-size"                : "(2*1024*1024)",
+            "update-client.storage-locations"           : "1",
+            "target.features_add"                       : ["BOOTLOADER"],
+            "target.bootloader_img"                     : "../bootloader/mbed-bootloader-DISCO_F469NI-sdio.bin",
+            "target.header_offset"                      : "0x10000",
+            "target.app_offset"                         : "0x10400"
+        },
+        "DISCO_F746NG": {
+            "target.components_add"                     : ["SDIO"],
+            "target.components_remove"                  : ["SD", "QSPIF"],
+            "target.device_has_add"                     : ["SDIO", "SDIO_ASYNC"],
+            "device-management.flash-start-address"     : "0x08000000",
+            "device-management.flash-size"              : "(1024*1024)",
+            "device-management.sotp-section-1-address"  : "(MBED_CONF_APP_FLASH_START_ADDRESS + MBED_CONF_APP_FLASH_SIZE - 2*(256*1024))",
+            "device-management.sotp-section-1-size"     : "(256*1024)",
+            "device-management.sotp-section-2-address"  : "(MBED_CONF_APP_FLASH_START_ADDRESS + MBED_CONF_APP_FLASH_SIZE - 1*(256*1024))",
+            "device-management.sotp-section-2-size"     : "(256*1024)",
+            "update-client.application-details"         : "(MBED_CONF_APP_FLASH_START_ADDRESS + 64*1024)",
+            "update-client.storage-address"             : "(2*1024*1024)",
+            "update-client.storage-size"                : "(2*1024*1024)",
+            "update-client.storage-locations"           : "1",
+            "target.features_add"                       : ["BOOTLOADER"],
+            "target.bootloader_img"                     : "../bootloaders/mbed-bootloader-DISCO_F746NG-sdio.bin",
+            "target.header_offset"                      : "0x10000",
+            "target.app_offset"                         : "0x10400"
+        }
+    },
+    "config": {
+        "format-storage-layer-on-error": {
+            "help": "Whether to format the storage layer when it cannot be read - always disable for production devices!",
+            "value": 1
+        },
+        "main-stack-size": {
+            "value": 6000
+        },
+        "use-button": {
+            "help": "Whether the target has a button",
+            "macro_name": "USE_BUTTON",
+            "value": true
+        },
+        "button-pressed-state": {
+            "help": "Value of the button when pressed",
+            "value": 1
+        },
+        "no_led": {
+            "help": "This flag disables the heartbeat thread in tests. This is useful for platforms that don't have an LED or the LED is used for other functionality like LED on the SPI clockline etc",
+            "value": null
+        },
+        "tests-fs-size": {
+            "help": "Maximum size of the file system used for tests",
+            "value": null
+        }
+    }
+}
