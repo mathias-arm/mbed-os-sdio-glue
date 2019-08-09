@@ -1,0 +1,18 @@
+{
+    "target_overrides": {
+        "*": {
+            "platform.stdio-baud-rate"                     : 115200,
+            "platform.stdio-convert-newlines"              : true,
+            "target.components_add"                        : ["SDIO"],
+            "target.device_has_add"                        : ["SDIO"]
+        },
+        "LPC55S69_NS": {
+            "target.components_remove"                     : ["SD"],
+	    "target.macros_add"                            : ["BUTTON1=SW2"]
+        },
+        "DISCO_F746NG": {
+            "target.components_remove"                     : ["SD"],
+            "target.device_has_add"                        : ["SDIO_ASYNC"]
+        }
+    }
+}
