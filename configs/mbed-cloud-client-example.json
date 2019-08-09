@@ -20,9 +20,9 @@
             "events.shared-stacksize"                   : 2048,
             "events.shared-eventsize"                   : 1536,
             "mbed-trace.enable"                         : null,
-            "nsapi.default-wifi-security"               : "NONE",
-            "nsapi.default-wifi-ssid"                   : "\"Guest-AccessNG\"",
-            "nsapi.default-wifi-password"               : "\"\""
+            "nsapi.default-wifi-security"               : "WPA_WPA2",
+            "nsapi.default-wifi-ssid"                   : "\"SSID\"",
+            "nsapi.default-wifi-password"               : "\"PASSWORD\""
         },
         "LPC55S69_NS": {
             "mbed-cloud-client.update-storage"           : "ARM_UCP_FLASHIAP_BLOCKDEVICE", 
